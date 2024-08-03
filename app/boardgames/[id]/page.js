@@ -9,7 +9,6 @@ export default function BoardgamePage() {
     const res = await fetch(`/api/boardgames/${params.id}`);
     if (res.ok) {
       const data = await res.json();
-      console.log(data);
       setBoardgame(data);
     }
   };
@@ -21,10 +20,13 @@ export default function BoardgamePage() {
       {boardgame && (
         <>
           <h2>{boardgame.title}</h2>
-          <img src={boardgame.image} />
-          <span>
+          <img src={boardgame.thumbnail} />
+          <p>
             {boardgame.minPlayers} - {boardgame.maxPlayers}
-          </span>
+          </p>
+          <p>
+            {boardgame.minPlayTime} - {boardgame.maxPlayTime}
+          </p>
         </>
       )}
     </div>

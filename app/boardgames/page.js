@@ -8,7 +8,6 @@ export default function BoardgamesPage() {
     const res = await fetch("/api/boardgames");
     if (res.ok) {
       const data = await res.json();
-      console.log(data);
       setBoardgames(data);
     }
   };
@@ -19,8 +18,7 @@ export default function BoardgamesPage() {
     <div>
       {boardgames.map((bg) => (
         <Link href={`/boardgames/${bg._id}`} key={bg._id}>
-          <h2>{bg.title}</h2>
-          <img src={bg.image} style={{ width: "128px" }} />
+          <img src={bg.thumbnail}  />
         </Link>
       ))}
     </div>
