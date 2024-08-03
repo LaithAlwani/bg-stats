@@ -18,9 +18,9 @@ export default function BoardgamesPage() {
   return (
     <div>
       {boardgames.map((bg) => (
-        <Link href={`/boardgames/${bg._id}`}>
+        <Link href={`/boardgames/${bg._id}`} key={bg._id}>
           <h2>{bg.title}</h2>
-          <img src={bg.image} style={{width:"128px"}} />
+          <img src={bg.image} style={{ width: "128px" }} />
         </Link>
       ))}
     </div>
