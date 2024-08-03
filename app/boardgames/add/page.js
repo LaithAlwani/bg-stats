@@ -17,7 +17,8 @@ export default function AddBoardgamePage() {
     });
     if (res.ok) {
       const data = await res.json();
-      router.push("/boardgames")
+      console.log(data);
+      // router.push("/boardgames")
     }
   };
 
