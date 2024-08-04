@@ -11,9 +11,11 @@ export default function BoardgamesPage() {
       setBoardgames(data);
     }
   };
+  
   useEffect(() => {
     getBoardgames();
   }, []);
+
   return (
     <div>
       {boardgames.map((bg) => (

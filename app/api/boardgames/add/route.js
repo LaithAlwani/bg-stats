@@ -9,24 +9,10 @@ export async function POST(req) {
     await connectToDB();
 
     boardgames.forEach(async (bg) => {
-      // const tempBg = {
-      //   title: bg.title,
-      //   thumbnail: bg.thumbnail,
-      //   image: bg.image,
-      //   isExpansion: bg.isExpansion === "true" ? true : false,
-      //   year: bg.year,
-      //   minPlayers: parseInt(bg.minPlayers),
-      //   maxPlayers: parseInt(bg.maxPlayers),
-      //   minPlayTime: parseInt(bg.minPlayTime),
-      //   maxPlayTime: parseInt(bg.maxPlayTime),
-      //   minAge: parseInt(bg.minAge),
-      //   description: bg.description,
-      //   bggId: bg.bggId,
-      //   year: bg.year,
-      // };
-      const boardgameExist = await Boardgame.findOne({ bggId: bg.bggId });
-      console.log(!boardgameExist)
-      if (!boardgameExist) await Boardgame.create(bg);
+      // const boardgameExist = await Boardgame.findOne({ bggId: bg.bggId });
+      // console.log(!boardgameExist)
+      // if (!boardgameExist)
+        await Boardgame.create(bg);
     });
 
     return NextResponse.json(
