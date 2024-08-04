@@ -25,6 +25,7 @@ export async function POST(req) {
         year: bg.year,
       };
       const boardgameExist = await Boardgame.findOne({ bggId: tempBg.bggId });
+      console.log(!boardgameExist)
       if (!boardgameExist) await Boardgame.create(bg);
     });
 
