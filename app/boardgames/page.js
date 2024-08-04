@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function BoardgamesPage() {
   const [boardgames, setBoardgames] = useState([]);
   const getBoardgames = async () => {
-    const res = await fetch("/api/boardgames",{cache:"no-store"});
+    const res = await fetch("/api/boardgames");
     if (res.ok) {
       const data = await res.json();
       setBoardgames(data);

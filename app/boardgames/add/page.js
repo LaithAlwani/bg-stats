@@ -12,7 +12,7 @@ export default function AddBoardgamePage() {
     const res = await fetch("/api/boardgames/add", {
       method: "POST",
       body: JSON.stringify({
-        boardgame:boardgames[0],
+        boardgames,
       }),
     });
     if (res.ok) {
