@@ -9,7 +9,7 @@ export async function POST(req) {
     await connectToDB();
 
     boardgames.forEach(async (bg) => {
-      
+      console.log(bg);
       // const boardgameExist = await Boardgame.findOne({ bggId: bg.bggId });
       // console.log(!boardgameExist)
       // if (!boardgameExist)
